@@ -2,11 +2,11 @@
 pipeline {
    agent any
     
-   environment {
+ //  environment {
       //VALUE_ONE = '1'
       //VALUE_TWO = '2'
      // VALUE_THREE = '3'
-   }
+ //  }
     
    stages {
    
