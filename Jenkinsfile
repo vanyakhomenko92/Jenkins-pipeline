@@ -33,7 +33,8 @@ pipeline {
          steps {
             echo 'Jenkins sends notification on telegram about success or fail'
             notifyEvents message: 'Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
-
+         }
+      }   
       stage('Deploy') {
          when {
             branch 'main'
