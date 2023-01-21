@@ -27,9 +27,9 @@ pipeline {
       }
       
       stage('Deploy') {
-//         when {
-//            branch 'master'
-//	  }
+         when {
+            branch 'main'
+	   }
          steps {
             echo 'Jenkins deploys artifact on server'
          }
