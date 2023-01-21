@@ -39,7 +39,7 @@ pipeline {
       stage('Notification') {
          steps {
             echo 'Jenkins sends notification on telegram about success or fail'
-            telegramSend(message: 'Hello World', chatId: -652849370)
+            notifyEvents message: 'Hello <b>world</b>', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }
    }
