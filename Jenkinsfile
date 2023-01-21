@@ -48,7 +48,7 @@ pipeline {
       stage('Notification after Deploy') {
          steps {
             echo 'Jenkins sends notification on telegram about success or fail'
-            notifyEvents message: 'The artifact was successfully deployed', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
+            notifyEvents message: 'The artifact was successfully deployed!!!', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }
    }
