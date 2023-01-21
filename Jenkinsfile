@@ -25,7 +25,15 @@ pipeline {
             echo 'Jenkins makes a tests'
          }
       }
-      
+
+      stage('Notification') {
+         when {
+            branch 'feature'
+	   }
+         steps {
+            echo 'Jenkins sends notification on telegram about success or fail'
+            notifyEvents message: 'Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
+
       stage('Deploy') {
          when {
             branch 'main'
@@ -36,10 +44,10 @@ pipeline {
       }
       
       // Expression based when example
-      stage('Notification') {
+      stage('Notification after Deploy') {
          steps {
             echo 'Jenkins sends notification on telegram about success or fail'
-            notifyEvents message: 'Hello <b>world</b>', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
+            notifyEvents message: 'The artifact was successfully deployed', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }
    }
