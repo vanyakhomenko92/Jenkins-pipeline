@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 pipeline {
    agent any
+   options {
+      buildDiscarder(logRotator(numToKeepStr: '5')) 
+      timestamps()
+   }
     
  //  environment {
       //VALUE_ONE = '1'
