@@ -23,7 +23,6 @@ pipeline {
       stage("Tests") {
           steps {
             echo 'Jenkins makes a tests'
-            cat /etc/tttrr
          }
       }
       
