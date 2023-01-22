@@ -47,11 +47,13 @@ for plugin in ${PluginList[@]}; do
 done
 ```
 The picture shows which plugins I installed.
+
 ![Install plugins](install-plugin.png)
 
 After that, I created a job that responds to the push to GitHub and performs the build and conditional tests.
 
 I created a Jenkins file with two branches main and feature and launched it on github. After that I set up a webhook to notify jenkins about changes in the repository.
+
 ![Branches](branches.png)
 
 
@@ -74,5 +76,7 @@ In addition, I configured another job that monitors the execution of the previou
 Previously, I brought up there and configured the server
 
 ![elastic](elastic.png)
+
 If successful, the project is uploaded to Elastic Beanstalk and we can see the changes.
+
 ![app](app-project.png)
