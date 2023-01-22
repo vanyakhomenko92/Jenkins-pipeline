@@ -1,10 +1,10 @@
 # Create Multibranch pipeline with the Jenkinsfile
 
 To complete the task, I followed the following steps:
-1. A virtual machine was deployed to AWS using terraform. 
+1. A virtual machine was deployed to AWS [using terraform](https://github.com/bugaenkoyu/Jenkins-pipeline/tree/main/terraform). 
 Teraform created a security group, public ip, key pair, and also opened ports 22 and 8080.
 
-2. In the next step, I used ansible to configure jenkins and install all necessary plugins on it.
+2. In the next step, [I used ansible](https://github.com/bugaenkoyu/Jenkins-pipeline/tree/main/ansible) to configure jenkins and install all necessary plugins on it.
 
 Using the following script, I created an admin user with help ansible.
 
@@ -69,7 +69,7 @@ The last step is the notification in Telegram, which I configured using the Noti
 
 ![telegram](telegram.png)
 
-In addition, I configured another job that monitors the execution of the previous one, and if successful, takes the project and uploads it to Elastic Beanstalk.
+In addition, I configured another job that monitors the execution of the previous one, and if successful, takes the [project](https://github.com/bugaenkoyu/Jenkins-pipeline/tree/main/my_project) and uploads it to Elastic Beanstalk.
 
 ![Jobs](jobs.png)
 
