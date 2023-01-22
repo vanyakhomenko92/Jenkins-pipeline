@@ -33,7 +33,7 @@ section.congratulations {
 section.congratulations h1 {
     margin: 0 0 25px 0;
     padding: 0;
-    color: #fff;
+    color: rgb(238, 124, 124);
     font-family: 'Lobster Two', cursive;
     font-size: 4.5em;
     text-shadow: 3px 3px 0 #334;
@@ -89,7 +89,7 @@ section.instructions ul {
 section.instructions ul li {
     margin-left: 0;
     padding-left: 0;
-    color: #f90;
+    color: rgb(89, 0, 255);
     font-size: 0.875em;
     line-height: 1.5em;
 }
