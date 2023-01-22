@@ -1,0 +1,7 @@
+---
+# vars file for download_and_run_plugins
+plugins_script_dir: /home/svjtosha/Documents/jenkins/jenkins-lesson-9/Jenkins-pipeline/ansible/roles/download_and_run_plugins/files/plugins.sh
+
+vagrant_home_dir: /home/vagrant/
+
+jenkins_cli_url: http://localhost:8080/jnlpJars/jenkins-cli.jar

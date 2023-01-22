@@ -1,0 +1,46 @@
+---
+# tasks file for download_and_run_plugins
+- name: Download Plugins script into vagrant home directory
+  ansible.builtin.copy:
+    src: "{{ plugins_script_dir }}"
+    dest: "{{ vagrant_home_dir }}"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0777'
+
+- name: Restart jenkins service 
+  service:
+      name: jenkins
+      state: restarted
+
+- name: Include wait for jenkins task
+  include_tasks: jenkins_check.yml
+
+- name: Download jenkins cli into vagrant home directory 
+  get_url:
+    url: "{{ jenkins_cli_url }}"
+    dest: "{{ vagrant_home_dir }}"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0777'
+  retries: 5
+  delay: 5
+  register: result      
+  until: result is succeeded
+
+- name: Run plugins scripts
+  shell: "/home/vagrant/plugins.sh"
+  args:
+    executable: /bin/bash
+  register: plugins_script
+
+
+- name: Show installed plugins
+  debug:
+    var: plugins_script.stdout
+
+- name: Restart jenkins service 
+  service:
+      name: jenkins
+      state: restarted
+  

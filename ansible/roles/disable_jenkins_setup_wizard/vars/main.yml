@@ -1,0 +1,3 @@
+---
+# vars file for disable_jenkins_setup_wizard
+jenkins_config_file: /etc/default/jenkins

@@ -1,0 +1,5 @@
+---
+# vars file for add_user
+groovy_init_dir: /var/lib/jenkins/init.groovy.d
+
+groovy_basic_security_url: /home/svjtosha/Documents/jenkins/jenkins-lesson-9/Jenkins-pipeline/ansible/roles/add_user/files/basic-security.groovy

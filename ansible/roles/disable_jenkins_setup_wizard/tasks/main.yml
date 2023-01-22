@@ -1,0 +1,6 @@
+---
+# tasks file for disable_jenkins_setup_wizard
+- name: Disable jenkins setup wizard
+  lineinfile:
+    path: "{{ jenkins_config_file }}"
+    line: JAVA_ARGS="-Djenkins.install.runSetupWizard=false"

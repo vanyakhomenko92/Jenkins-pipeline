@@ -1,0 +1,24 @@
+---
+# tasks file for add_user
+- name: Create groovy init directory 
+  file:
+    path: "{{ groovy_init_dir }}"
+    state: directory
+    mode: '0777'
+
+- name: Place basic security script in groovy directory
+  ansible.builtin.copy:
+    src: "{{ groovy_basic_security_url }}"
+    dest: "{{ groovy_init_dir }}/basic-security.groovy"
+    owner: jenkins
+    group: jenkins
+    mode: '0777'
+
+- name: Enable and start jenkins service 
+  service:
+    name: jenkins 
+    enabled: yes 
+    state: started
+
+- name: Include wait for jenkins task
+  include_tasks: jenkins_check.yml

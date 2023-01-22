@@ -1,0 +1,11 @@
+---
+
+- name: Automated Jenkins setup
+  hosts: all
+  become: true
+  roles:
+    - role: install_jre_and_jenkins
+    - role: disable_jenkins_setup_wizard
+    - role: add_user
+    - role: run_and_enable_jenkins
+    - role: download_and_run_plugins

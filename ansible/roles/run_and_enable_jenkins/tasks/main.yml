@@ -1,0 +1,10 @@
+---
+# tasks file for run_and_enable_jenkins
+- name: Enable and start jenkins service 
+  service:
+    name: jenkins 
+    enabled: yes 
+    state: started
+
+- name: Include wait for jenkins task
+  include_tasks: jenkins_check.yml
