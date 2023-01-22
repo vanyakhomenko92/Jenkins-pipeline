@@ -35,24 +35,6 @@ pipeline {
             notifyEvents message: 'Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }   
-      stage('Deploy') {
-         when {
-            branch 'main'
-	   }
-         steps {
-            echo 'Jenkins deploys artifact on server'
-         }
-      }
-      
-      // Expression based when example
-      stage('Notification after Deploy') {
-         when {
-            branch 'main'
-	   }
-         steps {
-            echo 'Jenkins sends notification on telegram about success or fail'
-            notifyEvents message: 'The artifact was successfully deployed', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
-         }
-      }
+     
    }
 }
