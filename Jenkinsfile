@@ -6,11 +6,9 @@ pipeline {
       timestamps()
    }
     
- //  environment {
-      //VALUE_ONE = '1'
-      //VALUE_TWO = '2'
-     // VALUE_THREE = '3'
- //  }
+   environment {
+      OWNER = 'Yuriy'
+   }
     
    stages {
    
@@ -28,31 +26,12 @@ pipeline {
 
       stage('Notification') {
          when {
-            branch 'feature'
-	   }
-         steps {
-            echo 'Jenkins sends notification on telegram about success or fail'
-            notifyEvents message: 'Build and test were successful!!', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
-         }
-      }   
-      stage('Deploy') {
-         when {
             branch 'main'
 	   }
          steps {
-            echo 'Jenkins deploys artifact on server'
+            notifyEvents message: "${OWNER}, Build and test were successful", token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
+            echo 'Jenkins sends notification on telegram about success'
          }
-      }
-      
-      // Expression based when example
-      stage('Notification after Deploy') {
-         when {
-            branch 'main'
-	   }
-         steps {
-            echo 'Jenkins sends notification on telegram about success or fail'
-            notifyEvents message: 'The artifact was successfully deployed!!!', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
-         }
-      }
+      }  
    }
 }
