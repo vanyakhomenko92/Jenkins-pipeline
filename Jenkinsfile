@@ -8,8 +8,6 @@ pipeline {
     
    environment {
       OWNER = 'Yuriy'
-      //VALUE_TWO = '2'
-     // VALUE_THREE = '3'
    }
     
    stages {
@@ -31,8 +29,8 @@ pipeline {
             branch 'main'
 	   }
          steps {
+            notifyEvents message: "${OWNER}, Build and test were successful", token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
             echo 'Jenkins sends notification on telegram about success'
-            notifyEvents message: '${OWNER}, Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }  
    }
