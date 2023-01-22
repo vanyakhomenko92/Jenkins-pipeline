@@ -32,7 +32,7 @@ pipeline {
 	   }
          steps {
             echo 'Jenkins sends notification on telegram about success'
-            notifyEvents message: '$OWNER, Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
+            notifyEvents message: '${OWNER}, Build and test were successful', token: 'wEdjJ5L4-hGIzg39oGxWt_qqz-AtHqIY'
          }
       }  
    }
