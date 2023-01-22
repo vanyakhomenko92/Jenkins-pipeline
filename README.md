@@ -50,3 +50,5 @@ The picture shows which plugins I installed.
 ![Install plugins](install-plugin.png)
 
 After that, I created a job that responds to the push to GitHub and performs the build and conditional tests.
+
+![Branches](branches.png)
